@@ -30,6 +30,9 @@ Route::get('/', function()
  */
 Route::resource('news','NewsController',
     array('only' => array('index', 'show')));
+/*
+*
+*/
 Route::resource('tutorials','TutorialsController',
     array('only' => array('index', 'show')));
 /*
@@ -40,8 +43,13 @@ Route::resource('tutorials','TutorialsController',
 Route::controller('about','AboutController');
 Route::controller('learn','LearnController');
 Route::controller('events','EventsController');
+Route::controller('tutors','TutorController');
 
-
+/*
+*tutors route
+*
+Route::resource('tutors','TutorController'
+    array('only'=> array('index')));
 
 /*
  * ********************************************************************************

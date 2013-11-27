@@ -1,18 +1,34 @@
 <?php
 
-class AdminController extends \BaseController {
+class TutorController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function getIndex()
 	{
         //
-        return View::make("admin.index");
+        return View::make("tutors.index");
 	}
-p
+	public function getSignup()
+	{
+		return View::make("tutors.signup");
+	}
+	public function postSignup()
+	{
+		$firstname = Input::get('firstname');
+		$lastname = Input::get('lastname');
+		$year = Input::get('year');
+		$course = Input::get('course');
+		$description = Input::get('description');
+		DB::table('tutors')->insert(
+    		array('firstname' => $firstname, 'lastname' => $lastname, 'year' => $year, 'course' => $course,'description' => $description)
+		);
+		return Redirect::to('/');
+	}
+
 	/**
 	 * Show the form for creating a new resource.
 	 *
