@@ -35,6 +35,11 @@ Route::resource('news','NewsController',
 */
 Route::resource('tutorials','TutorialsController',
     array('only' => array('index', 'show')));
+
+Route::resource('tutors','TutorController');
+
+//Route::post('store','TutorController');
+
 /*
  * About Route
  * ===========
@@ -43,13 +48,11 @@ Route::resource('tutorials','TutorialsController',
 Route::controller('about','AboutController');
 Route::controller('learn','LearnController');
 Route::controller('events','EventsController');
-Route::controller('tutors','TutorController');
-
 /*
 *tutors route
 *
 Route::resource('tutors','TutorController'
-    array('only'=> array('index')));
+    array('only'=> array('index','store')));
 
 /*
  * ********************************************************************************
